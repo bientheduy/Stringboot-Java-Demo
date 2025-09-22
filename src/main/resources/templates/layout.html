@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.png" />
+    <link rel="icon" type="image/png" th:href="@{/images/icons/favicon.png}" />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
@@ -31,7 +31,11 @@
       th:href="@{/fonts/linearicons-v1.0.0/icon-font.min.css}"
     />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" th:href="@{/vendor/animate/animate.css}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{/vendor/animate/animate.css}"
+    />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
@@ -57,7 +61,11 @@
       th:href="@{/vendor/daterangepicker/daterangepicker.css}"
     />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" th:href="@{/vendor/slick/slick.css}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{/vendor/slick/slick.css}"
+    />
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
@@ -74,20 +82,22 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/util.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
     <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <script th:src="@{/vendor/jquery/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/vendor/sweetalert/sweetalert.min.js}"></script>
   </head>
   <body class="animsition">
     <!-- Header -->
     <header th:replace="~{/header}"></header>
-     <div th:replace="${content}">
-    <!-- Cart -->
+    <div th:replace="${content}">
+      <!-- Cart -->
 
-    <!-- Slider -->
+      <!-- Slider -->
 
-    <!-- Banner -->
+      <!-- Banner -->
 
-    <!-- Product -->
-
-    <div>
+      <!-- Product -->
+    </div>
     <!-- Footer -->
     <header th:replace="~{/footer}"></header>
 
@@ -128,7 +138,7 @@
 
                         <a
                           class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                          th:href="@{/images/product-detail-01.jpg"
+                          href="images/product-detail-01.jpg"
                         >
                           <i class="fa fa-expand"></i>
                         </a>
@@ -302,8 +312,6 @@
     </div>
 
     <!--===============================================================================================-->
-    <script th:src="@{/vendor/jquery/jquery-3.2.1.min.js}"></script>
-    <!--===============================================================================================-->
     <script th:src="@{/vendor/animsition/js/animsition.min.js}"></script>
     <!--===============================================================================================-->
     <script th:src="@{/vendor/bootstrap/js/popper.js}"></script>
@@ -330,7 +338,9 @@
       $(".parallax100").parallax100();
     </script>
     <!--===============================================================================================-->
-    <script th:src="@{/vendor/MagnificPopup/jquery.magnific-popup.min.js}"></script>
+    <script
+      th:src="@{/vendor/MagnificPopup/jquery.magnific-popup.min.js}"
+    ></script>
     <script>
       $(".gallery-lb").each(function () {
         // the containers for all your galleries
@@ -347,7 +357,7 @@
     <!--===============================================================================================-->
     <script th:src="@{/vendor/isotope/isotope.pkgd.min.js}"></script>
     <!--===============================================================================================-->
-    <script th:src="@{/vendor/sweetalert/sweetalert.min.js}"></script>
+
     <script>
       $(".js-addwish-b2").on("click", function (e) {
         e.preventDefault();
@@ -395,7 +405,9 @@
       });
     </script>
     <!--===============================================================================================-->
-    <script th:src="@{/vendor/perfect-scrollbar/perfect-scrollbar.min.js}"></script>
+    <script
+      th:src="@{/vendor/perfect-scrollbar/perfect-scrollbar.min.js}"
+    ></script>
     <script>
       $(".js-pscroll").each(function () {
         $(this).css("position", "relative");

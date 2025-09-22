@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html th:replace="~{/layout::view(~{title},~{main})}">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{/layout::view(~{::title},~{::main})}"
+>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang Chu</title>
+    <title>Trang chủ</title>
   </head>
   <body>
-    <!-- Cart -->
-    <div th:replace="~{/cart}"></div>
-    <!-- Slider -->
-    <section th:replace="~{/slider}"></section>
-    <!-- Banner -->
-    <div th:replace="~{/banner}"></div>
-    <!-- Product -->
     <main>
+      <!-- Slider -->
+      <section th:replace="~{/slider}"></section>
+
+      <!-- Product -->
       <section class="bg0 p-t-23 p-b-140">
         <div class="container">
           <div class="p-b-10">
-            <h3 class="ltext-103 cl5">Product Overview</h3>
+            <h3 class="ltext-103 cl5">Sản phẩm</h3>
           </div>
 
           <div class="flex-w flex-sb-m p-b-52">
@@ -26,42 +25,42 @@
                 class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1"
                 data-filter="*"
               >
-                All Products
+                Tất cả sản phẩm
               </button>
 
               <button
                 class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
                 data-filter=".women"
               >
-                Women
+                Nữ
               </button>
 
               <button
                 class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
                 data-filter=".men"
               >
-                Men
+                Nam
               </button>
 
               <button
                 class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
                 data-filter=".bag"
               >
-                Bag
+                Túi
               </button>
 
               <button
                 class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
                 data-filter=".shoes"
               >
-                Shoes
+                Giày
               </button>
 
               <button
                 class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
                 data-filter=".watches"
               >
-                Watches
+                Đồng hồ
               </button>
             </div>
 
@@ -75,7 +74,7 @@
                 <i
                   class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"
                 ></i>
-                Filter
+                Bộ lọc
               </div>
 
               <div
@@ -87,7 +86,7 @@
                 <i
                   class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"
                 ></i>
-                Search
+                Tìm kiếm
               </div>
             </div>
 
