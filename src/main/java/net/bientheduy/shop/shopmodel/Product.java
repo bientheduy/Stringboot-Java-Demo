@@ -12,6 +12,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,12 +29,20 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     @Column(columnDefinition = "nvarchar(60)")
+    @NotBlank(message = "Chưa nhập tên sản phẩm")
     String name;
     String slug;
     @Column(columnDefinition = "nvarchar(500)")
     String description;
-    BigDecimal price;
+    @Column(columnDefinition = "nvarchar(255)")
+    String image;
+    @NotNull(message = "Chưa nhập giá sản phẩm")
+    @Positive(message = "Giá phải lớn hơn 0")
+    Integer price;
+    @NotNull(message = "Chưa nhập giá sản phẩm")
+    @Positive(message = "Giá phải lớn hơn 0")
     int quantity;
+     
     Boolean active;
     @ManyToOne @JoinColumn(name = "category_id")
     Category category;
