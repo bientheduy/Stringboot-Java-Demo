@@ -1,6 +1,9 @@
 package net.bientheduy.shop.service;
 
 import org.springframework.stereotype.Service;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,6 +21,8 @@ import net.bientheduy.shop.AccountRepository;
     public class UserService implements UserDetailsService{
         @Autowired
         AccountRepository accountRepository;
+        @Autowired
+        HttpSession session;
         @Override
         public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
             Account account = accountRepository.findByEmail(email);
@@ -28,6 +33,8 @@ import net.bientheduy.shop.AccountRepository;
                     role = "ROLE_ADMIN";
                 }
                 authorities.add(new SimpleGrantedAuthority(role));
+                session.setAttribute("account", account);
+
                 return new User(email, account.getPassword(), authorities);
             }
             return null;

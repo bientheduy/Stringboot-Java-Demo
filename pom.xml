@@ -14,7 +14,7 @@
     <groupId>net.bientheduy</groupId>
     <artifactId>shop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>shop</name>
     <description>Demo project for Spring Boot</description>
 
@@ -23,6 +23,12 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <!-- Spring Boot starters -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -69,12 +75,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Tomcat (for WAR packaging) -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
+        
 
         <!-- Testing -->
         <dependency>
